@@ -1,1 +1,0 @@
-# shohey-otsunagiya.github.io
