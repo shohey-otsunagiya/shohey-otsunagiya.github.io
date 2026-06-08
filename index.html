@@ -464,20 +464,7 @@
 
 <section>
   <p class="section-label">WHO</p>
-  <div style="position:relative;">
-    <img src="shohey.png" alt="しょーへい" style="
-      position:absolute;
-      right:-40px;
-      top:-20px;
-      width:55%;
-      max-width:320px;
-      opacity:0.12;
-      mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-      pointer-events:none;
-      transition: opacity 1.2s ease;
-    " id="shoheyImg">
-    <h2 class="profile-name">しょーへい</h2>
+  <h2 class="profile-name">しょーへい</h2>
     <p class="profile-title">千葉発・おつなぎ屋</p>
   <ul class="timeline">
     <li>
@@ -501,7 +488,6 @@
       事業者・個人事業主・これからチャレンジするあなたへ。
     </li>
   </ul>
-  </div>
 </section>
 
 <section>
@@ -650,21 +636,6 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.problem-list li, .service-item').forEach(el => observer.observe(el));
-
-  // 画像フェードイン
-  const imgEl = document.getElementById('shoheyImg');
-  if (imgEl) {
-    imgEl.style.opacity = '0';
-    const imgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => { imgEl.style.opacity = '0.13'; }, 300);
-          imgObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    imgObserver.observe(imgEl);
-  }
 </script>
 </body>
 </html>
