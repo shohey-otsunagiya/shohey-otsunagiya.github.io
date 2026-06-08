@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --black: #0a0a0a;
     --white: #f5f2ee;
@@ -16,9 +15,7 @@
     --gray: #888;
     --light-gray: #e8e4df;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--black);
     color: var(--white);
@@ -28,7 +25,6 @@
     overflow-x: hidden;
   }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -38,7 +34,6 @@
     position: relative;
     border-bottom: 1px solid rgba(200,169,126,0.2);
   }
-
   .hero::before {
     content: '';
     position: absolute;
@@ -46,7 +41,6 @@
     background: radial-gradient(ellipse at 80% 20%, rgba(200,169,126,0.08) 0%, transparent 60%);
     pointer-events: none;
   }
-
   .hero-label {
     font-size: 11px;
     letter-spacing: 0.3em;
@@ -55,7 +49,6 @@
     opacity: 0;
     animation: fadeUp 0.8s ease 0.2s forwards;
   }
-
   .hero-catch {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(28px, 6vw, 56px);
@@ -65,11 +58,7 @@
     opacity: 0;
     animation: fadeUp 0.8s ease 0.4s forwards;
   }
-
-  .hero-catch span {
-    color: var(--accent);
-  }
-
+  .hero-catch span { color: var(--accent); }
   .hero-sub {
     font-size: clamp(14px, 2.5vw, 18px);
     color: rgba(245,242,238,0.6);
@@ -78,12 +67,14 @@
     opacity: 0;
     animation: fadeUp 0.8s ease 0.6s forwards;
   }
-
   .hero-cta {
     opacity: 0;
     animation: fadeUp 0.8s ease 0.8s forwards;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
   }
-
   .cta-btn {
     display: inline-block;
     background: var(--accent);
@@ -98,7 +89,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .cta-btn::before {
     content: '';
     position: absolute;
@@ -107,33 +97,25 @@
     background: rgba(255,255,255,0.2);
     transition: left 0.3s ease;
   }
-
   .cta-btn:hover::before { left: 0; }
   .cta-btn:hover { transform: translateY(-2px); }
-
   .slots {
-    display: inline-block;
-    margin-left: 24px;
     font-size: 13px;
     color: var(--accent);
-    vertical-align: middle;
   }
-
   .slots-num {
     font-family: 'Noto Serif JP', serif;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 700;
     display: block;
     line-height: 1;
   }
 
-  /* SECTION BASE */
   section {
     padding: 100px 40px;
     max-width: 680px;
     margin: 0 auto;
   }
-
   .section-label {
     font-size: 10px;
     letter-spacing: 0.4em;
@@ -143,7 +125,6 @@
     align-items: center;
     gap: 16px;
   }
-
   .section-label::after {
     content: '';
     flex: 1;
@@ -151,11 +132,7 @@
     background: rgba(200,169,126,0.3);
   }
 
-  /* PROBLEM */
-  .problem-list {
-    list-style: none;
-  }
-
+  .problem-list { list-style: none; }
   .problem-list li {
     padding: 24px 0;
     border-bottom: 1px solid rgba(245,242,238,0.08);
@@ -167,22 +144,12 @@
     transform: translateX(-20px);
     transition: all 0.5s ease;
   }
-
-  .problem-list li.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
+  .problem-list li.visible { opacity: 1; transform: translateX(0); }
   .problem-list li::before {
     content: '—';
     color: var(--accent);
     flex-shrink: 0;
     margin-top: 2px;
-  }
-
-  /* PROFILE */
-  .profile-block {
-    position: relative;
   }
 
   .profile-name {
@@ -191,20 +158,13 @@
     font-weight: 700;
     margin-bottom: 8px;
   }
-
   .profile-title {
     font-size: 12px;
     letter-spacing: 0.2em;
     color: var(--accent);
     margin-bottom: 40px;
   }
-
-  .timeline {
-    list-style: none;
-    position: relative;
-    padding-left: 24px;
-  }
-
+  .timeline { list-style: none; position: relative; padding-left: 24px; }
   .timeline::before {
     content: '';
     position: absolute;
@@ -212,14 +172,12 @@
     width: 1px;
     background: linear-gradient(to bottom, var(--accent), transparent);
   }
-
   .timeline li {
     padding: 0 0 32px 24px;
     position: relative;
     font-size: 14px;
     color: rgba(245,242,238,0.75);
   }
-
   .timeline li::before {
     content: '';
     position: absolute;
@@ -228,7 +186,6 @@
     border-radius: 50%;
     background: var(--accent);
   }
-
   .timeline li strong {
     display: block;
     color: var(--white);
@@ -237,12 +194,7 @@
     font-size: 15px;
   }
 
-  /* SERVICE */
-  .service-grid {
-    display: grid;
-    gap: 2px;
-  }
-
+  .service-grid { display: grid; gap: 2px; }
   .service-item {
     background: rgba(245,242,238,0.03);
     border: 1px solid rgba(200,169,126,0.15);
@@ -251,52 +203,22 @@
     opacity: 0;
     transform: translateY(16px);
   }
-
-  .service-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  .service-item.visible { opacity: 1; transform: translateY(0); }
   .service-item:hover {
     background: rgba(200,169,126,0.06);
     border-color: rgba(200,169,126,0.4);
   }
+  .service-num { font-size: 10px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 12px; }
+  .service-title { font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .service-desc { font-size: 13px; color: rgba(245,242,238,0.55); line-height: 1.7; }
 
-  .service-num {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-
-  .service-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .service-desc {
-    font-size: 13px;
-    color: rgba(245,242,238,0.55);
-    line-height: 1.7;
-  }
-
-  /* SCARCITY */
   .scarcity-block {
     background: rgba(200,169,126,0.06);
     border: 1px solid rgba(200,169,126,0.3);
     padding: 48px 40px;
     text-align: center;
   }
-
-  .scarcity-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    margin-bottom: 24px;
-  }
-
+  .scarcity-label { font-size: 11px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 24px; }
   .scarcity-num {
     font-family: 'Noto Serif JP', serif;
     font-size: 72px;
@@ -305,13 +227,7 @@
     line-height: 1;
     margin-bottom: 8px;
   }
-
-  .scarcity-unit {
-    font-size: 18px;
-    color: rgba(245,242,238,0.6);
-    margin-bottom: 32px;
-  }
-
+  .scarcity-unit { font-size: 18px; color: rgba(245,242,238,0.6); margin-bottom: 32px; }
   .scarcity-text {
     font-size: 13px;
     color: rgba(245,242,238,0.5);
@@ -320,13 +236,11 @@
     margin: 0 auto 40px;
   }
 
-  /* FINAL CTA */
   .final-cta {
     text-align: center;
-    padding: 100px 40px 120px;
+    padding: 100px 40px 80px;
     border-top: 1px solid rgba(200,169,126,0.15);
   }
-
   .final-cta h2 {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(22px, 4vw, 36px);
@@ -334,40 +248,166 @@
     margin-bottom: 16px;
     line-height: 1.5;
   }
-
-  .final-cta p {
-    font-size: 14px;
-    color: rgba(245,242,238,0.5);
-    margin-bottom: 48px;
-  }
+  .final-cta p { font-size: 14px; color: rgba(245,242,238,0.5); margin-bottom: 48px; }
 
   /* FOOTER */
   footer {
     text-align: center;
-    padding: 40px;
-    font-size: 11px;
-    color: rgba(245,242,238,0.25);
-    letter-spacing: 0.1em;
+    padding: 32px 40px 40px;
     border-top: 1px solid rgba(245,242,238,0.05);
   }
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(245,242,238,0.2);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .admin-trigger {
+    background: none;
+    border: none;
+    color: rgba(245,242,238,0.08);
+    font-size: 10px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .admin-trigger:hover { color: rgba(245,242,238,0.25); }
+
+  /* ADMIN MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #141414;
+    border: 1px solid rgba(200,169,126,0.3);
+    padding: 40px;
+    width: 320px;
+    text-align: center;
+  }
+  .modal h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .modal p { font-size: 12px; color: rgba(245,242,238,0.4); margin-bottom: 24px; }
+  .modal input[type="password"] {
+    width: 100%;
+    background: rgba(245,242,238,0.05);
+    border: 1px solid rgba(200,169,126,0.3);
+    color: var(--white);
+    font-size: 20px;
+    padding: 12px 16px;
+    text-align: center;
+    letter-spacing: 0.3em;
+    margin-bottom: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    outline: none;
+  }
+  .modal input[type="password"]:focus { border-color: var(--accent); }
+  .modal-error { font-size: 12px; color: #e05; margin-bottom: 16px; min-height: 18px; }
+  .modal-btn {
+    width: 100%;
+    background: var(--accent);
+    color: var(--black);
+    border: none;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    transition: opacity 0.2s;
+  }
+  .modal-btn:hover { opacity: 0.85; }
+  .modal-close {
+    background: none;
+    border: none;
+    color: rgba(245,242,238,0.3);
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  /* ADMIN PANEL */
+  .admin-panel { display: none; }
+  .admin-panel.open { display: block; }
+  .admin-panel h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .admin-panel p { font-size: 12px; color: rgba(245,242,238,0.4); margin-bottom: 24px; }
+  .slot-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .slot-btn {
+    width: 44px; height: 44px;
+    background: rgba(200,169,126,0.15);
+    border: 1px solid rgba(200,169,126,0.4);
+    color: var(--accent);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    font-family: monospace;
+  }
+  .slot-btn:hover { background: rgba(200,169,126,0.3); }
+  .slot-display {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 60px;
+    text-align: center;
+    line-height: 1;
+  }
+  .save-btn {
+    width: 100%;
+    background: var(--accent);
+    color: var(--black);
+    border: none;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    transition: opacity 0.2s;
+  }
+  .save-btn:hover { opacity: 0.85; }
+  .save-msg { font-size: 12px; color: var(--accent); min-height: 18px; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
   @media (max-width: 480px) {
     .hero { padding: 80px 24px 60px; }
     section { padding: 80px 24px; }
     .scarcity-block { padding: 40px 24px; }
     .service-item { padding: 24px; }
-    .slots { display: block; margin: 16px 0 0; }
+    .hero-cta { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <p class="hero-label">CHIBA × OTSUNAGIYA</p>
   <h1 class="hero-catch">
@@ -390,7 +430,6 @@
   </div>
 </div>
 
-<!-- PROBLEM -->
 <section>
   <p class="section-label">PROBLEM</p>
   <ul class="problem-list">
@@ -402,34 +441,30 @@
   </ul>
 </section>
 
-<!-- PROFILE -->
 <section>
   <p class="section-label">WHO</p>
-  <div class="profile-block">
-    <h2 class="profile-name">しょーへい</h2>
-    <p class="profile-title">千葉発・おつなぎ屋</p>
-    <ul class="timeline">
-      <li>
-        <strong>客船専属カメラマンとして世界一周</strong>
-        日本最高峰の客船・飛鳥IIに乗船。日本一周を何度も経験。
-      </li>
-      <li>
-        <strong>一般社団法人理事として地域スポーツを運営</strong>
-        千葉県内で150〜200人規模のコミュニティを毎月運営。
-      </li>
-      <li>
-        <strong>半年で40人のコミュニティを立ち上げ</strong>
-        ゼロから人を集め、仕組みを作り続けてきた。
-      </li>
-      <li>
-        <strong>全ての事業は、人との出会いから始まった</strong>
-        だから繋ぐ。千葉の事業者のために。
-      </li>
-    </ul>
-  </div>
+  <h2 class="profile-name">しょーへい</h2>
+  <p class="profile-title">千葉発・おつなぎ屋</p>
+  <ul class="timeline">
+    <li>
+      <strong>客船専属カメラマンとして世界一周</strong>
+      日本最高峰の客船・飛鳥IIに乗船。日本一周を何度も経験。
+    </li>
+    <li>
+      <strong>一般社団法人理事として地域スポーツを運営</strong>
+      千葉県内で150〜200人規模のコミュニティを毎月運営。
+    </li>
+    <li>
+      <strong>半年で40人のコミュニティを立ち上げ</strong>
+      ゼロから人を集め、仕組みを作り続けてきた。
+    </li>
+    <li>
+      <strong>全ての事業は、人との出会いから始まった</strong>
+      だから繋ぐ。千葉の事業者のために。
+    </li>
+  </ul>
 </section>
 
-<!-- SERVICE -->
 <section>
   <p class="section-label">SERVICE</p>
   <div class="service-grid">
@@ -451,12 +486,11 @@
     <div class="service-item">
       <p class="service-num">04</p>
       <h3 class="service-title">きっかけ作り</h3>
-      <p class="service-desc">何から始めていいかわからない方へ。話を聞いて、最初の一手を一緒に考えます。</p>
+      <p class="service-desc">何から始めればいいかわからない方へ。話を聞いて、最初の一手を一緒に考えます。</p>
     </div>
   </div>
 </section>
 
-<!-- SCARCITY -->
 <section style="padding-top: 0;">
   <div class="scarcity-block">
     <p class="scarcity-label">MONTHLY LIMIT</p>
@@ -473,7 +507,6 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <div class="final-cta">
   <h2>人との出会いで、<br>事業は動く。</h2>
   <p>まずは気軽にDMしてください。</p>
@@ -483,30 +516,101 @@
 </div>
 
 <footer>
-  © 2026 しょーへい｜おつなぎ屋 — Chiba
+  <p class="footer-copy">© 2026 しょーへい｜おつなぎ屋 — Chiba</p>
+  <button class="admin-trigger" onclick="openAdminModal()">⚙</button>
 </footer>
 
-<script>
-  // 残り枠の数字（管理用：ここだけ変更すればOK）
-  const remainingSlots = 3;
-  document.getElementById('heroSlots').textContent = remainingSlots;
-  document.getElementById('mainSlots').textContent = remainingSlots;
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div id="pwScreen">
+      <h3>管理画面</h3>
+      <p>パスワードを入力してください</p>
+      <input type="password" id="pwInput" maxlength="4" placeholder="••••" onkeydown="if(event.key==='Enter')checkPw()">
+      <p class="modal-error" id="pwError"></p>
+      <button class="modal-btn" onclick="checkPw()">入る</button>
+      <button class="modal-close" onclick="closeModal()">閉じる</button>
+    </div>
+    <div class="admin-panel" id="adminPanel">
+      <h3>残り枠を更新</h3>
+      <p>変更するとページに即反映されます</p>
+      <div class="slot-control">
+        <button class="slot-btn" onclick="changeSlot(-1)">−</button>
+        <span class="slot-display" id="adminSlotNum">3</span>
+        <button class="slot-btn" onclick="changeSlot(1)">＋</button>
+      </div>
+      <button class="save-btn" onclick="saveSlots()">保存して反映</button>
+      <p class="save-msg" id="saveMsg"></p>
+      <button class="modal-close" onclick="closeModal()">閉じる</button>
+    </div>
+  </div>
+</div>
 
-  // スクロールアニメーション
+<script>
+  const PW = '8008';
+  let currentSlots = parseInt(localStorage.getItem('otsunagiya_slots') || '3');
+  let adminSlots = currentSlots;
+
+  function updateSlotDisplay() {
+    document.getElementById('heroSlots').textContent = currentSlots;
+    document.getElementById('mainSlots').textContent = currentSlots;
+  }
+  updateSlotDisplay();
+
+  function openAdminModal() {
+    document.getElementById('modalOverlay').classList.add('open');
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwError').textContent = '';
+    document.getElementById('pwScreen').style.display = 'block';
+    document.getElementById('adminPanel').classList.remove('open');
+    setTimeout(() => document.getElementById('pwInput').focus(), 100);
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+
+  function checkPw() {
+    const val = document.getElementById('pwInput').value;
+    if (val === PW) {
+      document.getElementById('pwScreen').style.display = 'none';
+      document.getElementById('adminPanel').classList.add('open');
+      adminSlots = currentSlots;
+      document.getElementById('adminSlotNum').textContent = adminSlots;
+      document.getElementById('saveMsg').textContent = '';
+    } else {
+      document.getElementById('pwError').textContent = 'パスワードが違います';
+      document.getElementById('pwInput').value = '';
+    }
+  }
+
+  function changeSlot(delta) {
+    adminSlots = Math.max(0, Math.min(10, adminSlots + delta));
+    document.getElementById('adminSlotNum').textContent = adminSlots;
+  }
+
+  function saveSlots() {
+    currentSlots = adminSlots;
+    localStorage.setItem('otsunagiya_slots', currentSlots);
+    updateSlotDisplay();
+    document.getElementById('saveMsg').textContent = '✓ 反映しました';
+    setTimeout(() => { document.getElementById('saveMsg').textContent = ''; }, 2000);
+  }
+
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.problem-list li, .service-item').forEach(el => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.problem-list li, .service-item').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
