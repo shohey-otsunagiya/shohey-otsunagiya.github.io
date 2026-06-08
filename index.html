@@ -427,6 +427,18 @@
     売上・集客・パートナー。<br>
     千葉の事業者の悩みを"人"で解決する。
   </p>
+  <p style="font-size:13px; color:rgba(245,242,238,0.5); margin-bottom:48px; line-height:2; border-left: 2px solid rgba(200,169,126,0.4); padding-left:16px;">
+    おつなぎ屋として、紹介料は0円です。<br>
+    なぜ無料なのか——<br>
+    過去に自分がそうしてもらえたように、<br>
+    今度は必要としている人に届ける番だと思ったから。<br>
+    <br>
+    ただし、誰でも繋ぐわけではない。<br>
+    信頼できるあなただからこそ、<br>
+    縁を繋ぎたいと思っています。<br>
+    <br>
+    <span style="font-size:11px; color:rgba(245,242,238,0.3);">※DM相談は、人数の制限はしておりません。</span>
+  </p>
   <div class="hero-cta">
     <a href="https://www.threads.net/@shohey_connect" class="cta-btn" target="_blank">
       無料相談をDMする
@@ -452,8 +464,21 @@
 
 <section>
   <p class="section-label">WHO</p>
-  <h2 class="profile-name">しょーへい</h2>
-  <p class="profile-title">千葉発・おつなぎ屋</p>
+  <div style="position:relative;">
+    <img src="shohey.png" alt="しょーへい" style="
+      position:absolute;
+      right:-40px;
+      top:-20px;
+      width:55%;
+      max-width:320px;
+      opacity:0.12;
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+      pointer-events:none;
+      transition: opacity 1.2s ease;
+    " id="shoheyImg">
+    <h2 class="profile-name">しょーへい</h2>
+    <p class="profile-title">千葉発・おつなぎ屋</p>
   <ul class="timeline">
     <li>
       <strong>客船専属カメラマンとして世界一周・日本一周</strong>
@@ -468,7 +493,7 @@
       千葉県内で150〜200人規模のコミュニティを毎月運営。
     </li>
     <li>
-      <strong>半年で40人のリアルコミュニティを立ち上げ</strong>
+      <strong>一般社団法人 新規拠点を立ち上げ、半年で会員40人達成</strong>
       人脈なし、ツテなし状態から場所の確保・集客・運営まで作り上げてきた。
     </li>
     <li>
@@ -476,10 +501,12 @@
       事業者・個人事業主・これからチャレンジするあなたへ。
     </li>
   </ul>
+  </div>
 </section>
 
 <section>
   <p class="section-label">SERVICE</p>
+  <p style="font-family:'Noto Serif JP',serif; font-size:clamp(18px,3.5vw,26px); font-weight:700; margin-bottom:48px; line-height:1.6;">これまで<span style="color:var(--accent); font-size:1.3em;">200人以上</span>の<br>縁を繋いできました。</p>
   <div class="service-grid">
     <div class="service-item">
       <p class="service-num">01</p>
@@ -489,7 +516,7 @@
     <div class="service-item">
       <p class="service-num">02</p>
       <h3 class="service-title">ビジネスパートナー紹介</h3>
-      <p class="service-desc">一緒に動ける仲間・パートナーを探しています。千葉在住・在勤の事業者同士を繋ぎます。</p>
+      <p class="service-desc">パートナーやサポーターが欲しい。リアルで会える仲間づくりをお手伝いします。</p>
     </div>
     <div class="service-item">
       <p class="service-num">03</p>
@@ -623,6 +650,21 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.problem-list li, .service-item').forEach(el => observer.observe(el));
+
+  // 画像フェードイン
+  const imgEl = document.getElementById('shoheyImg');
+  if (imgEl) {
+    imgEl.style.opacity = '0';
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { imgEl.style.opacity = '0.13'; }, 300);
+          imgObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    imgObserver.observe(imgEl);
+  }
 </script>
 </body>
 </html>
