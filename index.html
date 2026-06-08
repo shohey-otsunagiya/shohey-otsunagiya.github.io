@@ -102,14 +102,17 @@
   .slots {
     font-size: 13px;
     color: var(--accent);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
   }
   .slots-num {
     font-family: 'Noto Serif JP', serif;
     font-size: 36px;
     font-weight: 700;
-    display: block;
     line-height: 1;
   }
+  .slots-unit { font-size: 16px; }
 
   section {
     padding: 100px 40px;
@@ -265,14 +268,13 @@
   .admin-trigger {
     background: none;
     border: none;
-    color: rgba(245,242,238,0.08);
-    font-size: 10px;
+    color: rgba(245,242,238,0.12);
+    font-size: 12px;
     cursor: pointer;
-    letter-spacing: 0.05em;
     transition: color 0.3s;
-    font-family: 'Noto Sans JP', sans-serif;
+    padding: 4px 8px;
   }
-  .admin-trigger:hover { color: rgba(245,242,238,0.25); }
+  .admin-trigger:hover { color: rgba(245,242,238,0.35); }
 
   /* ADMIN MODAL */
   .modal-overlay {
@@ -411,8 +413,14 @@
 <div class="hero">
   <p class="hero-label">CHIBA × OTSUNAGIYA</p>
   <h1 class="hero-catch">
-    AIと騒がれてるが、<br>
-    売上を作るのは<br>
+    <div style="display:flex; align-items:center; gap:20px; margin-bottom:16px;">
+      <span style="color:#4a9eff; font-size:clamp(64px,14vw,120px); line-height:0.85; letter-spacing:-0.03em; flex-shrink:0;">AI</span>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font-size:clamp(16px,3vw,26px); font-weight:700; white-space:nowrap;">時代だ。</span>
+        <span style="font-size:clamp(13px,2.2vw,20px); font-weight:400; color:rgba(245,242,238,0.7); white-space:nowrap;">を使えと騒がれている。</span>
+      </div>
+    </div>
+    それでも売上を作るのは<br>
     最終的に<span>人</span>です。
   </h1>
   <p class="hero-sub">
@@ -425,7 +433,8 @@
     </a>
     <span class="slots">
       <span class="slots-num" id="heroSlots">3</span>
-      月の残り枠
+      <span class="slots-unit">名</span>
+      <span style="font-size:12px; margin-left:4px;">/ 今月の残り枠</span>
     </span>
   </div>
 </div>
@@ -447,20 +456,24 @@
   <p class="profile-title">千葉発・おつなぎ屋</p>
   <ul class="timeline">
     <li>
-      <strong>客船専属カメラマンとして世界一周</strong>
-      日本最高峰の客船・飛鳥IIに乗船。日本一周を何度も経験。
+      <strong>客船専属カメラマンとして世界一周・日本一周</strong>
+      日本最高峰の客船に乗船。世界一周・日本一周を経験。
+    </li>
+    <li>
+      <strong>映像制作・カメラマンとして多数の現場を担当</strong>
+      2,000人規模のイベント映像制作・放映・ディレクション、小規模イベントのダイジェスト撮影、ドリフトイベントや花火の空撮など幅広く活動。
     </li>
     <li>
       <strong>一般社団法人理事として地域スポーツを運営</strong>
       千葉県内で150〜200人規模のコミュニティを毎月運営。
     </li>
     <li>
-      <strong>半年で40人のコミュニティを立ち上げ</strong>
-      ゼロから人を集め、仕組みを作り続けてきた。
+      <strong>半年で40人のリアルコミュニティを立ち上げ</strong>
+      人脈なし、ツテなし状態から場所の確保・集客・運営まで作り上げてきた。
     </li>
     <li>
       <strong>全ての事業は、人との出会いから始まった</strong>
-      だから繋ぐ。千葉の事業者のために。
+      事業者・個人事業主・これからチャレンジするあなたへ。
     </li>
   </ul>
 </section>
@@ -494,12 +507,14 @@
 <section style="padding-top: 0;">
   <div class="scarcity-block">
     <p class="scarcity-label">MONTHLY LIMIT</p>
-    <p class="scarcity-num" id="mainSlots">3</p>
-    <p class="scarcity-unit">名 / 今月の残り枠</p>
+    <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin-bottom:32px;">
+      <p class="scarcity-num" id="mainSlots">3</p>
+      <span style="font-size:28px; color:var(--accent); font-family:'Noto Serif JP',serif; font-weight:700;">名</span>
+    </div>
+    <p class="scarcity-unit">今月の残り枠</p>
     <p class="scarcity-text">
       一件一件丁寧に繋ぐため、<br>
-      無料相談は月10名限定にしています。<br>
-      枠が埋まり次第、受付を停止します。
+      無料相談は月10名限定にしています。
     </p>
     <a href="https://www.threads.net/@shohey_connect" class="cta-btn" target="_blank">
       今すぐDMで相談する
@@ -509,15 +524,12 @@
 
 <div class="final-cta">
   <h2>人との出会いで、<br>事業は動く。</h2>
-  <p>まずは気軽にDMしてください。</p>
-  <a href="https://www.threads.net/@shohey_connect" class="cta-btn" target="_blank">
-    Threadsでメッセージする
-  </a>
+  <p>まずは気軽にDMしてください。<br>枠に余裕があるうちにどうぞ。</p>
 </div>
 
 <footer>
   <p class="footer-copy">© 2026 しょーへい｜おつなぎ屋 — Chiba</p>
-  <button class="admin-trigger" onclick="openAdminModal()">⚙</button>
+  <button class="admin-trigger" onclick="openAdminModal()">🔒</button>
 </footer>
 
 <!-- ADMIN MODAL -->
